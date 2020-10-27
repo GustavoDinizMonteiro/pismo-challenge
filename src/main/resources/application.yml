@@ -1,0 +1,10 @@
+spring:
+    jackson:
+        default-property-inclusion: non-empty
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+    datasource:
+        url: jdbc:postgresql://localhost:5432/pismo
+        username: pismo
+        password: pismo
