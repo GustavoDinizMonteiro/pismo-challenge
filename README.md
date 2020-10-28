@@ -1,6 +1,10 @@
 Pismo Challenge
 ===========
 
+## Overview
+
+[See overview](annotations.md)
+
 ## Online demo:
 
 Host: `https://pismo-clg.herokuapp.com/`
