@@ -2,8 +2,6 @@ package pismo.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +16,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import pismo.constants.TransactionType;
 
 @Entity
 @Table(name = "tb_transaction")
@@ -36,10 +33,10 @@ public class Transaction {
 	private Long amount;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="account_id")
+	@JoinColumn(name="account_id", nullable = false)
 	private Account account;
 	
-	@Enumerated(EnumType.ORDINAL)
-	@Column(name="operation_type")
-	private TransactionType tipoPalavraChave;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="operation_type_id", nullable = false)
+	private OperationType operationTypeId;
 }
