@@ -1,5 +1,7 @@
 package pismo.models;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +14,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+
+import org.springframework.data.annotation.CreatedDate;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -46,6 +50,9 @@ public class Transaction {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="operation_type_id", nullable = false)
 	private OperationType operationType;
+
+	@Column(name = "event_date", nullable = false)
+	private Date eventDate = new Date();
 
 	public void setAmount(Double amount) {
 		if (!operationType.getId().equals(PAYMENT_OPERATION_ID)) 
