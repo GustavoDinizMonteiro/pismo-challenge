@@ -17,10 +17,10 @@ public class AccountService {
 	}
 	
 	public Account getById(Long id) {
-		var accont = repository.findById(id);
-		if (accont.isEmpty())
+		var account = repository.findById(id);
+		if (account.isEmpty())
 			throw new EntityNotFoundException();
 		
-		return accont.get();
+		return account.get();
 	}
 }

@@ -32,4 +32,8 @@ public class OperationType {
 	public OperationType(String description) {
 		this.description = description;
 	}
+
+	public OperationType(Long id) {
+		this.id = id;
+	}
 }

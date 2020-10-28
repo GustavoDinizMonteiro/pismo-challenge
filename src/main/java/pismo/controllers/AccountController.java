@@ -2,7 +2,6 @@ package pismo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,9 +21,9 @@ public class AccountController {
 	private AccountService service;
 	
 	@PostMapping
-	public BodyBuilder create(@RequestBody Account account) {
+	public ResponseEntity<Object> create(@RequestBody Account account) {
 		service.create(account);
-		return ResponseEntity.ok();
+		return ResponseEntity.ok().build();
 	}
 
 	@GetMapping("/{id}")

@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -28,7 +28,11 @@ public class Account {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="se_account")
 	private Long id;
 	
-	@JsonAlias({ "document_number" })
+	@JsonProperty("document_number")
 	@Column(name="document_number", nullable = false, unique = true)
 	private String documentNumber;
+
+	public Account(Long id) {
+		this.id = id;
+	}
 }
