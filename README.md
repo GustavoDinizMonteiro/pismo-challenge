@@ -9,7 +9,7 @@ Host: `https://pismo-clg.herokuapp.com/`
 
 Travis
 
-[![Build Status](https://travis-ci.org/GustavoDinizMonteiro/pismo-challenge.svg?branch=master)](https://travis-ci.org/GustavoDinizMonteiro/pismo-challenge)
+[![Build Status](https://travis-ci.com/GustavoDinizMonteiro/pismo-challenge.svg?branch=master)](https://travis-ci.com/GustavoDinizMonteiro/pismo-challenge)
 
 
 ## Building from source
