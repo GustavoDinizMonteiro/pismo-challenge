@@ -30,7 +30,7 @@ WORKDIR /root
 # Cloning and install dependencies
 RUN \
   git clone https://github.com/GustavoDinizMonteiro/pismo-challenge.git && \
-  (cd pismo-challenge && mvn install)
+  (cd pismo-challenge && mvn install -DskipTests)
 
 # Define working directory.
 WORKDIR /root/pismo-challenge
