@@ -1,0 +1,29 @@
+version: "3"
+services:
+  database:
+    image: postgres:latest
+    network_mode: bridge
+    container_name: database
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    expose:
+    - 5432
+    ports:
+      - 5432:5432
+    environment:
+         - POSTGRES_PASSWORD=pismo
+         - POSTGRES_USER=pismo
+         - POSTGRES_DB=pismo
+    restart: always
+# APP*****************************************
+  app:
+    image: gmonteiro/pismo-challege:latest
+    command: ./mvnw spring-boot:run
+    ports:
+      - 8080:8080
+    restart: always
+    links:
+      - database
+
+volumes:
+    postgres-data
