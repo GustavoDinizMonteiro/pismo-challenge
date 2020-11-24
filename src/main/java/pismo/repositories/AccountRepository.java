@@ -1,9 +1,11 @@
 package pismo.repositories;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import pismo.models.Account;
 
-public interface AccountRepository extends JpaRepository<Account, Long>{
-
+public interface AccountRepository extends JpaRepository<Account, Long> {
+	Optional<Account> findByDocumentNumber(String documentNumber);
 }

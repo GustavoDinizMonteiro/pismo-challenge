@@ -8,3 +8,7 @@ spring:
         url: jdbc:postgresql://localhost:5432/pismo
         username: pismo
         password: pismo
+
+server:
+  error:
+    include-stacktrace: never

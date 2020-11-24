@@ -20,8 +20,7 @@ public class TransactionController {
 	private TransactionService service;
 	
 	@PostMapping
-	public ResponseEntity<Object> create(@Validated @RequestBody Transaction transaction) {
-		service.create(transaction);
-		return ResponseEntity.ok().build();
+	public ResponseEntity<Transaction> create(@Validated @RequestBody Transaction transaction) {
+		return ResponseEntity.ok(service.create(transaction));
 	}
 }

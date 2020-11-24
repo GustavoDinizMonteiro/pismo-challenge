@@ -21,9 +21,8 @@ public class AccountController {
 	private AccountService service;
 	
 	@PostMapping
-	public ResponseEntity<Object> create(@RequestBody Account account) {
-		service.create(account);
-		return ResponseEntity.ok().build();
+	public ResponseEntity<Account> create(@RequestBody Account account) {
+		return ResponseEntity.ok(service.create(account));
 	}
 
 	@GetMapping("/{id}")

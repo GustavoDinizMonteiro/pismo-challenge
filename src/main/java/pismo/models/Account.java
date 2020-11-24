@@ -31,6 +31,9 @@ public class Account {
 	@JsonProperty("document_number")
 	@Column(name="document_number", nullable = false, unique = true)
 	private String documentNumber;
+	
+	@Column(name="credit_limit", nullable = false)
+	private Double creditLimit = 0.0;
 
 	public Account(Long id) {
 		this.id = id;
